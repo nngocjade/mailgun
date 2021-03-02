@@ -6,7 +6,7 @@ const sendTestEmail = () => {
   const data = {
     from:
       "Mailgun Sandbox <postmaster@sandboxf892f174a178454399ad3b7e895c0a13.mailgun.org>",
-    to: "--YOUR EMAIL ADDRESS--",
+    to: "nngocjade@gmail.com",
     subject: "Hello",
     text: "Testing some Mailgun awesomeness!",
   };
