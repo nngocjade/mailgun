@@ -15,6 +15,22 @@ const sendTestEmail = () => {
   });
 };
 
+const sendVerificationEmail = (user) => {
+  const data = {
+    from:
+      "Mailgun Sandbox <postmaster@sandboxf892f174a178454399ad3b7e895c0a13.mailgun.org>",
+    to: user.email,
+    subject: "Please Verify Your Email Address",
+    template: "verify_email",
+    "v:verification_link": `${process.env.FRONTEND_URL}verify?code=${user.emailVerificationCode}`,
+    "v:name": user.name,
+  };
+  mg.messages().send(data, function (error, body) {
+    console.log(body);
+  });
+};
+
 module.exports = {
   sendTestEmail,
+  sendVerificationEmail,
 };
